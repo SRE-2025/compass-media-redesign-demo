@@ -4,7 +4,7 @@ if (menu && nav) {
   menu.addEventListener('click', () => {
     const open = nav.classList.toggle('open');
     menu.setAttribute('aria-expanded', String(open));
-    menu.textContent = open ? '×' : '☰';
+    menu.classList.toggle('is-open', open);
   });
 }
 

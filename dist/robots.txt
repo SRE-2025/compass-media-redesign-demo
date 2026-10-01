@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://compassmedia.io/sitemap.xml
+Sitemap: https://sre-2025.github.io/compass-media-redesign-demo/sitemap.xml
 

@@ -1,8 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <url>
-    <loc>https://compassmedia.io/en_us/</loc>
-    <xhtml:link rel="alternate" hreflang="en-us" href="https://compassmedia.io/en_us/" />
-    <xhtml:link rel="alternate" hreflang="es-mx" href="https://compassmedia.io/es/" />
-  </url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://sre-2025.github.io/compass-media-redesign-demo/</loc></url>
+  <url><loc>https://sre-2025.github.io/compass-media-redesign-demo/work.html</loc></url>
+  <url><loc>https://sre-2025.github.io/compass-media-redesign-demo/services.html</loc></url>
+  <url><loc>https://sre-2025.github.io/compass-media-redesign-demo/about.html</loc></url>
+  <url><loc>https://sre-2025.github.io/compass-media-redesign-demo/contact.html</loc></url>
+  <url><loc>https://sre-2025.github.io/compass-media-redesign-demo/brand-web.html</loc></url>
+  <url><loc>https://sre-2025.github.io/compass-media-redesign-demo/social-content.html</loc></url>
+  <url><loc>https://sre-2025.github.io/compass-media-redesign-demo/ads-video.html</loc></url>
+  <url><loc>https://sre-2025.github.io/compass-media-redesign-demo/case-kakao.html</loc></url>
+  <url><loc>https://sre-2025.github.io/compass-media-redesign-demo/case-colvital.html</loc></url>
+  <url><loc>https://sre-2025.github.io/compass-media-redesign-demo/case-apex.html</loc></url>
+  <url><loc>https://sre-2025.github.io/compass-media-redesign-demo/case-bon-balm.html</loc></url>
+  <url><loc>https://sre-2025.github.io/compass-media-redesign-demo/case-farandula.html</loc></url>
+  <url><loc>https://sre-2025.github.io/compass-media-redesign-demo/case-le-gourmet.html</loc></url>
+  <url><loc>https://sre-2025.github.io/compass-media-redesign-demo/case-dentprax.html</loc></url>
+  <url><loc>https://sre-2025.github.io/compass-media-redesign-demo/case-grupo-smile.html</loc></url>
+  <url><loc>https://sre-2025.github.io/compass-media-redesign-demo/video-food-hospitality.html</loc></url>
+  <url><loc>https://sre-2025.github.io/compass-media-redesign-demo/video-strategy-advertising.html</loc></url>
+  <url><loc>https://sre-2025.github.io/compass-media-redesign-demo/video-marketing-insights.html</loc></url>
 </urlset>

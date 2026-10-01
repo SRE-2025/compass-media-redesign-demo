@@ -26,7 +26,7 @@ document.querySelectorAll('.filter').forEach((button) => {
   });
 });
 
-const motionVideos = [...document.querySelectorAll('.motion-video-card video')];
+const motionVideos = [...document.querySelectorAll('.motion-video-card video, .social-card video')];
 if (motionVideos.length) {
   motionVideos.slice(1).forEach((video) => video.pause());
   motionVideos.forEach((video, index) => {
@@ -49,5 +49,18 @@ if (motionVideos.length) {
     if (index > 0) video.removeAttribute('autoplay');
   });
 }
+
+document.querySelectorAll('[data-social-feed]').forEach((feed) => {
+  const section = feed.closest('.social-studio');
+  const previous = section?.querySelector('[data-feed-prev]');
+  const next = section?.querySelector('[data-feed-next]');
+  const step = () => {
+    const card = feed.querySelector('.social-card');
+    const gap = Number.parseFloat(getComputedStyle(feed).columnGap || getComputedStyle(feed).gap) || 18;
+    return (card?.getBoundingClientRect().width || feed.clientWidth * 0.8) + gap;
+  };
+  previous?.addEventListener('click', () => feed.scrollBy({ left: -step(), behavior: 'smooth' }));
+  next?.addEventListener('click', () => feed.scrollBy({ left: step(), behavior: 'smooth' }));
+});
 
 document.querySelectorAll('[data-year]').forEach((el) => { el.textContent = new Date().getFullYear(); });

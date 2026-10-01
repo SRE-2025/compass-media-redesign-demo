@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://compassmedia.io/sitemap.xml
+

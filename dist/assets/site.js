@@ -33,7 +33,7 @@ if (form) {
     const data = new FormData(form);
     const subject = encodeURIComponent(`Compass Media project inquiry — ${data.get('name')}`);
     const body = encodeURIComponent(`Name: ${data.get('name')}\nCompany: ${data.get('company')}\nEmail: ${data.get('email')}\nService: ${data.get('service')}\n\n${data.get('message')}`);
-    window.location.href = `mailto:info@compassmedia.io?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:sandra@compassmedia.io?subject=${subject}&body=${body}`;
   });
 }
 

@@ -26,14 +26,27 @@ document.querySelectorAll('.filter').forEach((button) => {
   });
 });
 
-const form = document.querySelector('#briefForm');
-if (form) {
-  form.addEventListener('submit', (event) => {
-    event.preventDefault();
-    const data = new FormData(form);
-    const subject = encodeURIComponent(`Compass Media project inquiry — ${data.get('name')}`);
-    const body = encodeURIComponent(`Name: ${data.get('name')}\nCompany: ${data.get('company')}\nEmail: ${data.get('email')}\nService: ${data.get('service')}\n\n${data.get('message')}`);
-    window.location.href = `mailto:sandra@compassmedia.io?subject=${subject}&body=${body}`;
+const motionVideos = [...document.querySelectorAll('.motion-video-card video')];
+if (motionVideos.length) {
+  motionVideos.slice(1).forEach((video) => video.pause());
+  motionVideos.forEach((video, index) => {
+    video.tabIndex = 0;
+    const activate = () => {
+      motionVideos.forEach((item) => { if (item !== video) item.pause(); });
+      if (video.paused) video.play().catch(() => {});
+    };
+    video.addEventListener('mouseenter', activate);
+    video.addEventListener('focus', activate);
+    video.addEventListener('click', () => {
+      if (video.paused) activate(); else video.pause();
+    });
+    video.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        if (video.paused) activate(); else video.pause();
+      }
+    });
+    if (index > 0) video.removeAttribute('autoplay');
   });
 }
 

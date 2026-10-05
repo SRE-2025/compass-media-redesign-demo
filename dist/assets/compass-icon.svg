@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Compass Media">
+  <defs>
+    <linearGradient id="compassGold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffd84a"/>
+      <stop offset="1" stop-color="#ff9300"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="92" fill="#07145f"/>
+  <path d="M82 424 206 88Q211 76 224 76h64q13 0 18 12l124 336h-88l-86-245-86 245Z" fill="url(#compassGold)"/>
+</svg>

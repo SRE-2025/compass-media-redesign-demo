@@ -26,7 +26,7 @@ document.querySelectorAll('.filter').forEach((button) => {
   });
 });
 
-const motionVideos = [...document.querySelectorAll('.motion-video-card video, .social-card video')];
+const motionVideos = [...document.querySelectorAll('.motion-video-card video, .social-card video, .work-motion-grid video')];
 if (motionVideos.length) {
   motionVideos.slice(1).forEach((video) => video.pause());
   motionVideos.forEach((video, index) => {

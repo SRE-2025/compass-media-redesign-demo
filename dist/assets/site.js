@@ -63,4 +63,28 @@ document.querySelectorAll('[data-social-feed]').forEach((feed) => {
   next?.addEventListener('click', () => feed.scrollBy({ left: step(), behavior: 'smooth' }));
 });
 
+document.querySelectorAll('[data-service-finder]').forEach((finder) => {
+  const tabs = [...finder.querySelectorAll('[data-finder-tab]')];
+  const panels = [...finder.querySelectorAll('.finder-panel')];
+  const activate = (tab) => {
+    const targetId = tab.dataset.finderTab;
+    tabs.forEach((item) => item.setAttribute('aria-selected', String(item === tab)));
+    panels.forEach((panel) => {
+      const active = panel.id === targetId;
+      panel.hidden = !active;
+      panel.classList.toggle('is-active', active);
+    });
+  };
+  tabs.forEach((tab, index) => {
+    tab.addEventListener('click', () => activate(tab));
+    tab.addEventListener('keydown', (event) => {
+      if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+      event.preventDefault();
+      const nextIndex = event.key === 'Home' ? 0 : event.key === 'End' ? tabs.length - 1 : (index + (event.key === 'ArrowRight' ? 1 : -1) + tabs.length) % tabs.length;
+      tabs[nextIndex].focus();
+      activate(tabs[nextIndex]);
+    });
+  });
+});
+
 document.querySelectorAll('[data-year]').forEach((el) => { el.textContent = new Date().getFullYear(); });

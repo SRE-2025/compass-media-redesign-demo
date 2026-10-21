@@ -15,13 +15,24 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.08 });
 document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
 
-document.querySelectorAll('.filter').forEach((button) => {
-  button.addEventListener('click', () => {
-    document.querySelectorAll('.filter').forEach((item) => item.classList.remove('active'));
-    button.classList.add('active');
-    const filter = button.dataset.filter;
-    document.querySelectorAll('[data-category]').forEach((card) => {
-      card.classList.toggle('hidden', filter !== 'all' && !card.dataset.category.includes(filter));
+document.querySelectorAll('.work-filters').forEach((filterGroup) => {
+  const archive = filterGroup.closest('.identity-archive');
+  const buttons = [...filterGroup.querySelectorAll('.filter')];
+  const cards = [...(archive || document).querySelectorAll('[data-category]')];
+
+  buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const filter = button.dataset.filter;
+      buttons.forEach((item) => {
+        const isActive = item === button;
+        item.classList.toggle('active', isActive);
+        item.setAttribute('aria-pressed', String(isActive));
+      });
+      cards.forEach((card) => {
+        const matches = filter === 'all' || card.dataset.category.split(' ').includes(filter);
+        card.classList.toggle('hidden', !matches);
+        card.setAttribute('aria-hidden', String(!matches));
+      });
     });
   });
 });
